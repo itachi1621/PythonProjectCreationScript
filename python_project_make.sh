@@ -24,9 +24,10 @@ create_project_files(){
     touch .gitignore
     echo "__pycache__" >> .gitignore
     touch README.md
+    echo "# $1" >> README.md
     touch LICENSE
     touch "$1.py"
-    echo "Project $pname created"
+    echo "Project $1 created"
 }
 
 
