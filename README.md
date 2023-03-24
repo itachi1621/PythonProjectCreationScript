@@ -5,7 +5,10 @@ This is a simple shell script that automates the process of creating a new Pytho
 ## Requirements
 1. Python 3.x installed on your system
 2. Git installed on your system
-3. python3-venv package for creating virual enviroment(*optional*)
+
+## Optional 
+1. python3-venv package for creating virual enviroment
+
 
 ## Usage
 1. Clone this repository or download the `python_project_make.sh` script.
