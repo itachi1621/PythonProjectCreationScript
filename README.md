@@ -1,4 +1,4 @@
-# PythonProjectCreationScript
+# Python Project Creation Script
 
 This is a simple shell script that automates the process of creating a new Python project and initializing Git repository.
 
