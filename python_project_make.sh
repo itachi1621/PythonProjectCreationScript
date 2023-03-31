@@ -16,6 +16,13 @@ venv_plugin_check(){
     echo $is_installed
 }
 
+check_project_name(){
+    if [ -d "$1" ]; then
+        echo "Project $1 already exists"
+        exit
+    fi
+}
+
 create_project_files(){
     
     echo "Creating project files"
@@ -30,12 +37,22 @@ create_project_files(){
     echo "Project $1 created"
 }
 
+#accep optinal argument for project name 
+if [ $# -eq 1 ]; then # Basically allows you to pass in a parameter to the script or not
+    pname=$1
+    project_exists "$pname" # Check if project exists
+    echo "Creating project $pname"
+    echo "Creating directory structure"
+    mkdir "$pname"
 
-venv_installed=$(venv_plugin_check)
+    cd "$pname" || echo "Failed " exit
+    create_project_files "$pname"
+else
 
 
 read -p "Enter name of Python project to create:" pname
 
+check_project_name "$pname"
 echo "Creating project $pname"
 echo "Creating directory structure"
 mkdir "$pname"
@@ -46,7 +63,9 @@ cd "$pname" || echo "Failed " exit
 create_project_files "$pname"
 
 
+fi
 
+venv_installed=$(venv_plugin_check)
 
 if [ "$venv_installed" = true ]; then
     venv_name="my_env"
@@ -54,9 +73,7 @@ if [ "$venv_installed" = true ]; then
     python3 -m venv "$venv_name" 
     
     echo "my_env" >> .gitignore
-    echo "__pycache__" >> .gitignore
+    #echo "__pycache__" >> .gitignore
 
 fi
-
-#rm -r ../"$pname"
 
