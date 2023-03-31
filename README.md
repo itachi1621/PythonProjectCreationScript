@@ -17,11 +17,28 @@ This is a simple shell script that automates the process of creating a new Pytho
 
 3. Place `python_project_make.sh` script in that directory 
 
-3. Run the script using the following command:
-```
-sh /path/to/python_project_make.sh
-```
-4. Follow the prompt to enter your `project name`
+4. Run the script using one the following commands:
+    
+    **i.** If you want to create using an argument for the project name, 
+     run the following command:
+
+    ```
+    sh /path/to/python_project_make.sh project_name
+
+    ```
+    **or**
+    
+    **i.** If you want to create using a prompt for the project name, run the following command:
+
+    ```
+
+    sh /path/to/python_project_make.sh
+
+    ```
+
+    **ii.** Follow the prompt to enter your `project name
+
+
 
 ### Following actions will then happen:
 1. The script will create a new directory named with `project_name` 
